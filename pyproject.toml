@@ -1,0 +1,21 @@
+[build-system]
+requires = ["scikit-build-core>=0.9", "pybind11>=2.12"]
+build-backend = "scikit_build_core.build"
+
+[project]
+name = "christorch"
+version = "0.0.1"
+requires-python = ">=3.10"
+dependencies = []
+description = "A tiny PyTorch-like framework (C++ backend, Python frontend)"
+readme = "README.md"
+authors = [{name="you"}]
+
+[tool.scikit-build]
+wheel.expand-macos-universal-tags = true
+cmake.verbose = true
+cmake.minimum-version = "3.23"
+build-dir = "build/{wheel_tag}"
+
+[tool.pytest.ini_options]
+testpaths = ["tests/python"]
