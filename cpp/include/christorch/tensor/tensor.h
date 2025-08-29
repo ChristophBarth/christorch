@@ -1,2 +1,2 @@
 #pragma once
-#include "../../../cpp/christorch/tensor/tensor.h"
+#include "../../cpp/christorch/tensor/tensor.h"
