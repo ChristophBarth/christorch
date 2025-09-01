@@ -5,6 +5,7 @@
 #include <iostream>
 #include "christorch/tensor/tensor.h"
 #include "debug/nice_printing.h"
+#include "christorch/ops/add.h"
 
 using namespace christorch;
 
@@ -15,8 +16,8 @@ int main() {
     Tensor a = Tensor(DType::Float32, shape);
     a.copyFrom(flat);
 
-    Tensor b = Tensor({1.0,2.0,3.0});
-    print_vector(b.shape());
-    std::cout << to_string(b.dtype());
+    Tensor b = Tensor({{11,12,13,21,22,23}});
 
+    Tensor c  = add(b,b);
+    print_vector(c.to_vector<int>());
 }

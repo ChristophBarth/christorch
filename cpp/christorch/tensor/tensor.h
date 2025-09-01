@@ -48,6 +48,9 @@ namespace christorch {
 
         template<typename T>
         std::vector<T> to_vector() const;
+
+        template<typename T>
+        const T* get(size_t idx) const;
     };
 
 
@@ -94,7 +97,7 @@ namespace christorch {
     template<typename T>
     inline void Tensor::copyFrom(const std::vector<T>& src){
         if (src.size() != size_) {
-            throw std::runtime_error("size mismatch in copyFrom: src.size()=" +
+            throw std::runtime_error("size mismatch in copyFrom(): src.size()=" +
                                      std::to_string(src.size()) + " vs tensor size_=" +
                                      std::to_string(size_));
         }
@@ -106,6 +109,16 @@ namespace christorch {
     inline std::vector<T> Tensor::to_vector() const {
         const T* src = data_as<T>();
         return std::vector<T>(src, src + size_);
+    }
+
+    template<typename T>
+    inline const T* Tensor::get(size_t idx) const {
+       if(idx >= size_){
+           throw std::runtime_error(
+                   "In Tensor.get(): Index " + std::to_string(idx) + " out of bounds for tensor size " + std::to_string(size_)
+                   );
+       }
+       return data_as<T>() + idx;
     }
 
 } // namespace christorch

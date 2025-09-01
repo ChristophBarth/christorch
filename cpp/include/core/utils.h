@@ -6,6 +6,8 @@
 #include <utility>
 #include <numeric>
 
+#pragma once
+
 // --- scalar_type<T>: peel nested vectors / init_lists to the scalar ---
 template<class T>
 struct scalar_type { using type = T; };
