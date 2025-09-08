@@ -7,7 +7,7 @@ namespace py = pybind11;
 
 void init_tensor_bindings(py::module_& m) {
     py::class_<christorch::Tensor>(m, "TensorNative")
-        .def(py::init<std::vector<double>>(), py::arg("data"))
+        //.def(py::init<std::vector<double>>(), py::arg("data"))
         .def("size", &christorch::Tensor::size)
         .def("data", [](christorch::Tensor& t){ return t.data(); });
 

@@ -28,7 +28,7 @@ add_library(christorch_core
     cpp/christorch/tensor/tensor.cpp
     cpp/christorch/ops/add.cpp
     cpp/christorch/autograd/engine.cpp
-        cpp/include/core/dtype.h cpp/include/christorch/ops/add.h cpp/include/core/utils.h cpp/include/debug/nice_printing.h cpp/include/christorch/ops/matmul.h cpp/christorch/ops/matmul.h cpp/christorch/ops/matmul.cpp)
+        cpp/include/christorch/ops/add.h cpp/include/core/utils.h cpp/include/debug/nice_printing.h cpp/include/christorch/ops/matmul.h cpp/christorch/ops/matmul.h cpp/christorch/ops/matmul.cpp cpp/include/core/type.h)
 target_include_directories(christorch_core PUBLIC cpp/include)
 
 # Python extension christorch._C
