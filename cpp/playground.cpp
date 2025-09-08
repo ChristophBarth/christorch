@@ -34,4 +34,6 @@ int main() {
 
     print_vector(c.to_vector());
 
+    std::cout << c.get({1,0}) << "\n";
+
 }
